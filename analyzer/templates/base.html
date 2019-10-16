@@ -1,0 +1,157 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+      <title>Cirrus - Wifi Analysis</title>
+
+    <!-- Bootstrap core CSS-->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom fonts for this template-->
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="{% static 'vendor/datatables/dataTables.bootstrap4.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/fontawesome/all.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="{% static 'css/sb-admin.css' %}" rel="stylesheet">
+
+    <link href="{% static 'vendor/datatables/colReorder.dataTables.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/daterangepicker/daterangepicker.css' %}" rel="stylesheet"/>
+
+    <!-- Icons -->
+    <link href="{% static 'vendor/open-iconic-master/font/css/open-iconic-bootstrap.min.css' %}" rel="stylesheet">
+
+      <!-- Custom styles for this template-->
+      <link href="{% static 'css/cirrus.css' %}" rel="stylesheet">
+
+
+      {% block custom_css %}
+    {% endblock %}
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand navbar-dark bg-dark navbar-static-top">
+      <a class="navbar-brand mr-1" href="{% url 'index' %}">Cirrus</a>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a id="rssi-tab" class="nav-link" href="{% url 'index' %}">RSSI</a>
+          </li>
+          <li class="nav-item">
+            <a id="speedtest-tab" class="nav-link"  href="{% url 'index' %}">Speedtest</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+              </li>
+          </ul>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <div id="wrapper">
+
+      <!-- Side Navbar -->
+    <ul class="sidebar navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="{% url 'index' %}">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="{% url 'dashboard_analyzers' %}">
+            <span>Analyzers</span>
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" href="{% url 'dashboard_access_points' %}">
+                <span>Access Points</span>
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" href="{% url 'dashboard_head_unit' %}">
+                <span>Head Units</span>
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" href="{% url 'dashboard_troubles' %}">
+                <span>Troubles</span>
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" href="{% url 'dashboard_channel_analysis' %}">
+                <span>Ch Analysis</span>
+            </a>
+        </li>
+    </ul>
+
+      <div id="content-wrapper">
+
+        <div class="container-fluid">
+
+          <div id="successAlertDiv" class="alert alert-success" role="alert"
+               style="display: none;"></div>
+          <div id="dangerAlertDiv" class="alert alert-danger" role="alert"
+               style="display: none;"></div>
+
+          {% block main_content %}
+          {% endblock %}
+
+        </div>
+
+      </div>
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="{% static 'vendor/datatables/jquery.dataTables.js' %}"></script>
+    <script src="{% static 'vendor/datatables/dataTables.bootstrap4.js' %}"></script>
+    <script src="{% static 'vendor/datatables/ColReorderWithResize.js' %}"></script>
+    <script src="{% static 'vendor/moments/moments.js' %}"></script>
+    <script src="{% static 'vendor/daterangepicker/daterangepicker.js' %}"></script>
+
+    <script src="{% static 'vendor/chart.js/Chart.bundle.js' %}"></script>
+    <script src="{% static 'vendor/chartjs-plugin-annotation/chartjs-plugin-annotation.js' %}"></script>
+    <script src="{% static 'vendor/hammerjs/hammerjs.js' %}"></script>
+    <script src="{% static 'vendor/chartjs-plugin-zoom/chartjs-plugin-zoom.js' %}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{% static 'js/sb-admin.min.js' %}"></script>
+    <script src="{% static 'js/added_commons.js' %}"></script>
+
+    {% block custom_js %}
+    {% endblock %}
+
+  </body>
+
+</html>
