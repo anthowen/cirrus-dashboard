@@ -33,6 +33,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'analyzer.apps.AnalyzerConfig',
+
+    # Webpack loader
+    'webpack_loader',
 ]
 
 MIDDLEWARE = [
@@ -117,3 +120,12 @@ STATIC_URL = '/static/'
 
 LOGIN_URL = '/login/'
 ROOT_URL = ''
+
+# Webpack loader
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'bundles/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
+    }
+}

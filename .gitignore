@@ -1,3 +1,4 @@
 node_modules
 analyzer/__pycache__
 Django_Settings/__pycache__
+analyzer/static/bundles
