@@ -1,4 +1,17 @@
+# Folder
 node_modules
-analyzer/__pycache__
-Django_Settings/__pycache__
 analyzer/static/bundles
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+### Django ###
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+
+.env
+db.sqlite3
